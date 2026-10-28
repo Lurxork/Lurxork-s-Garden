@@ -13,7 +13,6 @@ config_version=5
 config/name="The_Garden_of_Eden"
 run/main_scene="uid://dfjugrsod8kxa"
 config/features=PackedStringArray("4.6", "GL Compatibility")
-config/icon="res://icon.svg"
 
 [display]
 
