@@ -428,7 +428,7 @@ offset_right = 1072.0
 offset_bottom = 506.0
 theme_override_fonts/font = ExtResource("2_jvmdh")
 theme_override_font_sizes/font_size = 28
-text = "Version 1.0.0 Lurxork's garden"
+text = "Version 1.1.0 Lurxork's garden"
 
 [connection signal="released" from="StartButton" to="." method="_on_start_button_released"]
 [connection signal="timeout" from="MessageTimer" to="." method="_on_message_timer_timeout"]

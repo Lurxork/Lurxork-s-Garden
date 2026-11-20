@@ -51,10 +51,10 @@ z_index = 1
 priority = 9
 
 [node name="MobTimer" type="Timer" parent="." unique_id=982630377]
-wait_time = 0.4
+wait_time = 0.5
 
 [node name="FlyMobTimer" type="Timer" parent="." unique_id=884627941]
-wait_time = 0.4
+wait_time = 0.3
 
 [node name="ScoreTimer" type="Timer" parent="." unique_id=612096182]
 wait_time = 0.2

@@ -6,12 +6,6 @@ var score
 var mob_score = int(0)
 
 
-func game_over() -> void:
-	$ScoreTimer.stop()
-	$MobTimer.stop()
-	$FlyMobTimer.stop()
-	$HUD.show_game_over()
-
 func new_game():
 	score = 0
 	$Player.start($StartPosition.position)
@@ -21,6 +15,23 @@ func new_game():
 	await get_tree().create_timer(1.5).timeout
 	$StartTimer.start()
 	$HUD.show_message("EVADE THE BUGS")
+
+func game_over() -> void:
+	$ScoreTimer.stop()
+	$MobTimer.stop()
+	$FlyMobTimer.stop()
+	$HUD.show_game_over()
+
+func _on_score_timer_timeout() -> void:
+	score += 1
+	$HUD.update_score(score)
+
+
+func _on_start_timer_timeout() -> void:
+	$MobTimer.start()
+	$ScoreTimer.start()
+	$FlyMobTimer.start()
+
 
 func _on_mob_timer_timeout() -> void:
 	var mob = mob_scene.instantiate()
@@ -54,13 +65,3 @@ func _on_fly_mob_timer_timeout() -> void:
 	mob.linear_velocity = velocity.rotated(direction)
 	mob_score = mob_score + randi_range(1, 3)
 	add_child(mob)
-
-func _on_score_timer_timeout() -> void:
-	score += 1
-	$HUD.update_score(score)
-
-
-func _on_start_timer_timeout() -> void:
-	$MobTimer.start()
-	$ScoreTimer.start()
-	$FlyMobTimer.start()
